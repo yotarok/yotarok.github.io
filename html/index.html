@@ -1,38 +1,42 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personal website of Yotaro Kubo - Research Scientist specializing in Machine Learning, Speech Recognition, and Deep Learning" />
+    <meta name="keywords" content="Yotaro Kubo, speech recognition, machine learning, deep learning, AI research, Sakana AI, Google, Amazon" />
+    <meta name="author" content="Yotaro Kubo" />
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1992849-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-1992849-2');
     </script>
+    
     <title>YOTA.RO</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
     <link rel="stylesheet" href="css/main.201404.css"/>
-
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <body>
 
     <div class="content">
       <div class="content_text">
-      <p class="about">
-        This is a personal website introducing my research activities.
-        Please feel free to contact me on my <a href="mailto:[firstname]@ieee.org" class=".nowrap"> <img src="img/social-email.png" width="16" height="16" alt="email icon"/>e-mail address</a>, or <a href="http://jp.linkedin.com/in/yotaro"><img src="img/linkedin.png" width="16" height="16" alt="LinkedIn icon"/>LinkedIn</a>.
-      </p>
+        <h1>Yotaro Kubo</h1>
+        <p class="about">
+          Welcome to my personal website introducing my research activities in machine learning and speech recognition. I'm currently a Research Scientist at Sakana AI, focusing on generative models, probabilistic systems, and deep learning applications.
+          <br><br>
+          Please feel free to contact me on my <a href="mailto:[firstname]@ieee.org" class="nowrap"><img src="img/social-email.png" width="16" height="16" alt="email icon"/>e-mail address</a>, or <a href="http://jp.linkedin.com/in/yotaro"><img src="img/linkedin.png" width="16" height="16" alt="LinkedIn icon"/>LinkedIn</a>.
+        </p>
 
     <h2>Short Bio</h2>
 
     <p>
       <img src="img/atvancouver.jpg" width="160" height="185" style="float: left; margin-right: 15px; margin-bottom: 5px;"/>
 
-      <span style="font-weight: bold;">Dr. Yotaro Kubo</span> received the B.E., M.E., and Dr.Eng. degrees from Waseda University, Tokyo, Japan, in 2007, 2008, and 2010, respectively.
+      <span style="font-weight: bold;">Yotaro Kubo</span> received the B.E., M.E., and Dr.Eng. degrees from Waseda University, Tokyo, Japan, in 2007, 2008, and 2010, respectively.
       He was a visiting scientist at RWTH Aachen University for six monthes in 2010.
       After that period, he joined Nippon Telegraph and Telephone Corporation (NTT) and had been with NTT Communication Science Laboratories.
       From 2014 to 2019, he was with Amazon (at Aachen, Germany) and developed/ investigated speech recognition for voice search and personal assistants.
@@ -275,14 +279,11 @@
           (放送配信に向けた音声符号化AACの音質改善)
         </li>
       </ul>
-      <ul>
-        <li><a href="javascript:void(0)" onclick="$('#DCpapers').css({display:'none'});$('#DCpapers_expand_button').css({display:'block'});">Click to fold</a></li>
-      </ul>
     </div>
 
     <div id="DCpapers_expand_button">
       <ul><li>
-          <a href="javascript:void(0)"  onclick="$('#DCpapers').css({display:'block'});$('#DCpapers_expand_button').css({display:'none'});">Click to expand</a>
+          <a href="javascript:void(0)" onclick="toggleDCPapers()">Click to expand domestic papers</a>
         </li>
       </ul>
     </div>
@@ -382,5 +383,24 @@
     </ul>
     </div>
 
+    <script>
+      function toggleDCPapers() {
+        const papers = document.getElementById('DCpapers');
+        const button = document.getElementById('DCpapers_expand_button');
+        
+        if (papers.style.display === 'none' || papers.style.display === '') {
+          papers.style.display = 'block';
+          button.innerHTML = '<ul><li><a href="javascript:void(0)" onclick="toggleDCPapers()">Click to fold domestic papers</a></li></ul>';
+        } else {
+          papers.style.display = 'none';
+          button.innerHTML = '<ul><li><a href="javascript:void(0)" onclick="toggleDCPapers()">Click to expand domestic papers</a></li></ul>';
+        }
+      }
+      
+      // Initialize the display state
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('DCpapers').style.display = 'none';
+      });
+    </script>
   </body>
 </html>
